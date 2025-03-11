@@ -1,46 +1,71 @@
-:root {
-    --primary-color: #facc15; /* Yellow */
-    --secondary-color: #ffd60a; /* Slightly brighter yellow */
-    --text-color: #ffffff; /* White */
-    --bg-color: #333333; /* Grey */
-    --card-bg: #444444; /* Dark grey */
-    --border-color: #555555; /* Slightly lighter grey */
-    --shadow-color: rgba(255, 255, 255, 0.1);
-    --transition: all 0.3s ease;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Personal Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Your Logo</div>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle">Toggle Theme</button>
+        </nav>
+    </header>
 
-[data-theme="dark"] {
-    --bg-color: #222222;
-    --card-bg: #2a2a2a;
-    --border-color: #444444;
-    --shadow-color: rgba(255, 255, 255, 0.2);
-}
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to My Creative Space</h1>
+            <p class="subtitle">Designer, Developer, Dreamer</p>
+            <button class="btn primary">Explore More</button>
+        </div>
+    </section>
 
-body, .navbar, .footer {
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    box-shadow: 0 2px 10px var(--shadow-color);
-}
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>Hi! I'm an enthusiastic web designer and developer with a passion for creating engaging and user-friendly websites. I love experimenting with new technologies and pushing the boundaries of web design.</p>
+    </section>
 
-.logo, .nav-links a, .theme-toggle, .typing-text, .subtitle, .social-links a, .project-links a,
-.nav-links a:hover, .theme-toggle:hover, .social-links a:hover, .project-links a:hover {
-    color: var(--text-color);
-}
+    <section id="portfolio" class="portfolio-section">
+        <h2>Portfolio</h2>
+        <div class="project">
+            <h3>Project Title</h3>
+            <p>Project description goes here. It highlights the key features and technologies used.</p>
+            <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+            <a href="#" class="project-links">View Project</a>
+        </div>
+    </section>
 
-.nav-links a:hover, .theme-toggle:hover, .social-links a:hover, .project-links a:hover {
-    color: var(--primary-color);
-}
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <p>Let's get in touch! Reach out to me via the form below:</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn primary">Send Message</button>
+        </form>
+    </section>
 
-.btn.primary, .back-to-top {
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-}
+    <footer class="footer">
+        <p>© 2025 Your Name. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+        </div>
+    </footer>
 
-.btn.secondary, .progress-bar, .project-tech span {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-}
+    <button class="back-to-top">Back to Top</button>
 
-.progress {
-    background-color: var(--primary-color);
-}
+    <script src="script.js"></script>
+</body>
+</html>
