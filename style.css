@@ -1,147 +1,68 @@
-/* Root Variables */
-:root {
-    --primary-color: #facc15;
-    --secondary-color: #ffd60a;
-    --text-color: #ffffff;
-    --bg-color: #222222;
-    --card-bg: #2a2a2a;
-    --border-color: #444444;
-    --shadow-color: rgba(255, 255, 255, 0.1);
-    --transition: all 0.3s ease;
-}
-
-/* Global Styles */
-body {
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: var(--transition);
-}
-
-/* Navbar and Footer */
-header.navbar, footer.footer {
-    background-color: var(--bg-color);
-    box-shadow: 0 2px 10px var(--shadow-color);
-    padding: 1rem;
-    text-align: center;
-}
-
-/* Typography and Links */
-header.navbar .logo, .nav-links a, .theme-toggle, .social-links a,
-.hero-section h1, .hero-section .subtitle,
-.about-section h2, .portfolio-section h2, .contact-section h2 {
-    color: var(--text-color);
-}
-
-.nav-links a:hover, .theme-toggle:hover, .social-links a:hover {
-    color: var(--primary-color);
-}
-
-/* Hero Section */
-.hero-section {
-    padding: 5rem 1rem;
-    text-align: center;
-    background-color: var(--card-bg);
-}
-
-/* Buttons */
-button {
-    background-color: var(--primary-color);
-    border: none;
-    color: var(--bg-color);
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: var(--transition);
-}
-
-button:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Card Styling */
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    margin: 1rem;
-    padding: 1rem;
-    transition: var(--transition);
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px var(--shadow-color);
-}
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.back-to-top:hover {
-    background-color: var(--secondary-color);
-}
-
-/* FlexSlider Integration */
-.flexslider {
-    background: var(--card-bg);
-    border: 4px solid var(--border-color);
-    border-radius: 4px;
-}
-.flexslider .slides img {
-    width: 100%;
-    display: block;
-    border-radius: 4px;
-}
-
-/* FontAwesome Integration */
-.fa {
-    font-family: 'FontAwesome';
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Lightbox Styles */
-.lightboxOverlay {
-    background-color: rgba(0, 0, 0, 0.95);
-}
-
-.lb-outerContainer {
-    background-color: var(--bg-color);
-}
-
-.lb-dataContainer {
-    color: var(--text-color);
-}
-
-/* Owl Carousel Integration */
-.owl-carousel .owl-item img {
-    border-radius: 4px;
-}
-
-.owl-carousel .owl-nav button {
-    color: var(--text-color);
-    background: var(--primary-color);
-}
-
-.owl-carousel .owl-nav button:hover {
-    background: var(--secondary-color);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="flex-slider.css">
+    <link rel="stylesheet" href="fontawesome.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <link rel="stylesheet" href="owl.css">
+    <link rel="stylesheet" href="templatemo-eduwell-style.css">
+</head>
+<body>
+    <header class="header-area">
+        <nav class="main-nav">
+            <ul class="nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="main-banner">
+        <div class="header-text">
+            <h2>Welcome to My Personal Website</h2>
+            <p>A showcase of my work and passions</p>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Brief introduction about yourself.</p>
+    </section>
+    
+    <section id="portfolio">
+        <h2>My Work</h2>
+        <div class="owl-carousel">
+            <div class="item"><img src="image1.jpg" alt="Project 1"></div>
+            <div class="item"><img src="image2.jpg" alt="Project 2"></div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <script src="jquery.min.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000
+            });
+        });
+    </script>
+</body>
+</html>
