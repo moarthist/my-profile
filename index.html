@@ -3,36 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <title>Mahmoud Mohammadi | Web Developer</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Correct Font Awesome import -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <div class="container">
-        <!-- Profile Image -->
-        <img src="https://github.com/moarthist/my-profile/blob/main/5945254483615401686.jpg" alt="Mahmoud Mohammadi's Profile Picture">
-        
-        <!-- Name & Bio -->
-        <h1>Hello, I'm Mahmoud MOHAMMADI!</h1>
-        <p>I'm a web developer passionate about creating awesome websites.</p>
-        <p>I'm a web developer passionate about creating awesome websites.</p>
-        
-        <!-- Button to GitHub -->
-        <a href="https://github.com/moarthist" class="btn" target="_blank" rel="noopener noreferrer">Visit My GitHub</a>
-
-        <!-- Social Media Links -->
-        <div class="social-links">
-            <a href="https://twitter.com/YOUR-TWITTER" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://instagram.com/YOUR-INSTAGRAM" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">MM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <div class="profile-image">
+                <img src="https://github.com/moarthist/my-profile/blob/main/5945254483615401686.jpg" alt="Mahmoud Mohammadi's Profile Picture">
+            </div>
+            <h1 class="typing-text">Hello, I'm Mahmoud MOHAMMADI!</h1>
+            <p class="subtitle">Web Developer & Designer</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn primary">Get in Touch</a>
+                <a href="https://github.com/moarthist" class="btn secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-aos="fade-up">About Me</h2>
+            <div class="about-content" data-aos="fade-up">
+                <div class="about-text">
+                    <p>I'm a passionate web developer with a keen eye for design and a love for creating beautiful, functional websites. I specialize in front-end development and enjoy turning complex problems into simple, beautiful solutions.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/YOUR-TWITTER" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://instagram.com/YOUR-INSTAGRAM" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 data-aos="fade-up">My Skills</h2>
+            <div class="skills-grid" data-aos="fade-up">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 data-aos="fade-up">My Projects</h2>
+            <div class="projects-grid" data-aos="fade-up">
+                <!-- Project cards will be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Get in Touch</h2>
+            <div class="contact-content" data-aos="fade-up">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mahmoud Mohammadi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
