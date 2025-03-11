@@ -1,139 +1,69 @@
-/* Elegant Design Enhancements */
+/* Variables */
 :root {
-    --primary-color: #4F46E5;
-    --secondary-color: #6366F1;
-    --text-color: #374151;
-    --bg-color: #F9FAFB;
-    --card-bg: #FFFFFF;
-    --border-color: #E5E7EB;
-    --shadow-color: rgba(0, 0, 0, 0.08);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary-color: #facc15; /* Yellow */
+    --secondary-color: #ffd60a; /* Slightly brighter yellow */
+    --text-color: #ffffff; /* White */
+    --bg-color: #333333; /* Grey */
+    --card-bg: #444444; /* Dark grey */
+    --border-color: #555555; /* Slightly lighter grey */
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --transition: all 0.3s ease;
 }
 
-/* Dark Mode */
+/* Dark Mode Variables */
 [data-theme="dark"] {
-    --primary-color: #818CF8;
-    --secondary-color: #6366F1;
-    --text-color: #E5E7EB;
-    --bg-color: #111827;
-    --card-bg: #1F2937;
-    --border-color: #374151;
-    --shadow-color: rgba(0, 0, 0, 0.3);
+    --primary-color: #facc15;
+    --secondary-color: #ffd60a;
+    --text-color: #ffffff;
+    --bg-color: #222222;
+    --card-bg: #2a2a2a;
+    --border-color: #444444;
+    --shadow-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.7;
     color: var(--text-color);
     background-color: var(--bg-color);
-    transition: var(--transition);
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+.navbar, .footer {
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
-/* Navbar */
-.navbar {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 15px var(--shadow-color);
+.logo, .nav-links a, .theme-toggle, .typing-text, .subtitle, .social-links a, .project-links a {
+    color: var(--text-color);
 }
 
-.nav-links a:hover {
-    color: var(--secondary-color);
-    transform: scale(1.1);
-}
-
-/* Hero Section */
-.hero {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.typing-text {
-    font-size: 3rem;
-    font-weight: 700;
+.nav-links a:hover, .theme-toggle:hover, .social-links a:hover, .project-links a:hover {
     color: var(--primary-color);
-    animation: fadeInUp 1s ease-in-out;
-}
-
-.cta-buttons .btn {
-    padding: 0.8rem 1.8rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: var(--transition);
 }
 
 .btn.primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px var(--shadow-color);
+.btn.secondary {
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
-/* About Section */
-.about h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    text-align: center;
+.progress-bar {
+    background-color: var(--card-bg);
 }
 
-/* Skills */
-.skill-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: var(--transition);
+.progress {
+    background-color: var(--primary-color);
 }
 
-.skill-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px var(--shadow-color);
+.back-to-top {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
 }
 
-/* Projects */
-.project-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 25px var(--shadow-color);
-}
-
-/* Footer */
-.footer {
-    padding: 2rem;
-    text-align: center;
-    background: var(--bg-color);
-    border-top: 1px solid var(--border-color);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-[data-aos] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-[data-aos].aos-animate {
-    opacity: 1;
-    transform: translateY(0);
+.project-tech span {
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
