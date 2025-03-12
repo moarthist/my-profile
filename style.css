@@ -166,33 +166,57 @@ body::after {
     max-width: 500px;
     height: 220px;
     margin: 0 auto 1.5rem;
-    background: var(--gradient-2);
+    background: linear-gradient(120deg, 
+        rgba(93, 55, 99, 0.8),
+        rgba(179, 110, 144, 0.8));
     border-radius: 30px;
     padding: 4px;
     transform: rotate(-3deg);
-    box-shadow: 0 20px 40px var(--shadow-color);
+    box-shadow: 
+        0 20px 40px var(--shadow-color),
+        inset 0 0 60px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
 }
 
 .profile-banner::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: var(--gradient-1);
-    border-radius: 32px;
-    z-index: -1;
-    opacity: 0.5;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.1) 50%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(255, 255, 255, 0.1) 50%, transparent 55%);
+    animation: rotateBg 15s linear infinite;
 }
 
 .profile-banner::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 50%),
-                radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.2), transparent 50%);
+    background: 
+        linear-gradient(120deg, rgba(255, 255, 255, 0.2), transparent),
+        repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.1) 5%,
+            transparent 5%,
+            transparent 10%
+        );
     border-radius: 30px;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes rotateBg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .profile-image {
@@ -206,7 +230,32 @@ body::after {
     background-clip: padding-box;
     position: relative;
     transform: rotate(3deg) translateY(-20px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        0 0 0 8px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--secondary-color),
+        var(--accent-color)
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 .profile-image img {
