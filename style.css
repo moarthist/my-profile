@@ -794,3 +794,70 @@ body {
                 border-color 0.3s ease,
                 box-shadow 0.3s ease;
 }
+
+/* Education Section */
+.education {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.education-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background-color: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.education-item p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.education-item .institution {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.education-item .period {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.education-item .website a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.education-item .website a:hover {
+    text-decoration: underline;
+}
+
+.education-item .thesis {
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.education-item .note {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
