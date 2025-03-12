@@ -1,233 +1,915 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahmoud MOHAMMADI | Visual Arts Student </title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
-        </div>
-    </nav>
+/* Variables */
+:root {
+    --primary-color: #7C3AED;  /* Vibrant purple */
+    --secondary-color: #5b3f4d; /* Pink */
+    --accent-color: #34D399;   /* Mint green */
+    --text-color: #1F2937;
+    --bg-color: #F9FAFB;
+    --card-bg: #FFFFFF;
+    --border-color: #E5E7EB;
+    --shadow-color: rgba(124, 58, 237, 0.1);
+    --gradient-1: linear-gradient(135deg, #2d2c2d, #5b3f4d);
+    --gradient-2: linear-gradient(135deg, #34D399, #7C3AED);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --card-border-radius: 16px;
+    --nav-blur: blur(10px);
+}
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <div class="profile-banner">
-                <div class="profile-image">
-                    <img src="profile.jpeg" alt="Mahmoud Mohammadi's Profile Picture">
-                </div>
-            </div>
-            <h1 class="typing-text">Hello, I'm Mahmoud MOHAMMADI</h1>
-            <p class="subtitle">Visual Arts Student | Exhibition and Museum Studies</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn primary">Get in Touch</a>
-                <a href="https://github.com/moarthist" class="btn secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </div>
-        </div>
-    </section>
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-color: #A78BFA;
+    --secondary-color: #F472B6;
+    --accent-color: #34D399;
+    --text-color: #F9FAFB;
+    --bg-color: #111827;
+    --card-bg: #1F2937;
+    --border-color: #374151;
+    --shadow-color: rgba(167, 139, 250, 0.2);
+}
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 data-aos="fade-up">About Me</h2>
-            <div class="about-content" data-aos="fade-up">
-                <div class="about-text">
-                    <p>I'm a dedicated researcher and art historian with expertise in visual arts, museology, and curation. My academic background spans multiple disciplines, including art history, linguistics, and translation. Passionate about cultural heritage, I specialize in analyzing historical texts, iconography, and artistic traditions across different civilizations. With experience in publishing, teaching, and curatorial projects, I thrive on uncovering connections between art, history, and society to foster a deeper understanding of the past.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mahmoud-mohammadi/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/moarthist" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Education and Training Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 data-aos="fade-up">Education and Training</h2>
-            <div class="education-content" data-aos="fade-up">
-                <div class="education-item">
-                    <h3>Master in Visual Arts - ARTS, MUSÉOLOGIE ET CURATORSHIP</h3>
-                    <p class="institution">University of Bologna | Bologna, Italy</p>
-                    <p class="period">September 2023 – Present | EQF Level 7</p>
-                    <p class="website"><a href="http://www.unibo.it" target="_blank">www.unibo.it</a></p>
-                </div>
+html {
+    scroll-behavior: smooth;
+}
 
-                <div class="education-item">
-                    <h3>Erasmus+ Mobility (University Exchange Program)</h3>
-                    <p class="institution">University of Liège | Liège, Belgium</p>
-                    <p class="period">September 2024 – January 2025 | EQF Level 7</p>
-                    <p class="website"><a href="http://www.uliege.be" target="_blank">www.uliege.be</a></p>
-                </div>
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    position: relative;
+    min-height: 100vh;
+}
 
-                <div class="education-item">
-                    <h3>Editing for Film and Video Art</h3>
-                    <p class="institution">Berlin Summer University of the Arts | Berlin, Germany</p>
-                    <p class="period">August 15-23, 2024</p>
-                    <p class="website"><a href="https://summer-university.udk-berlin.de" target="_blank">summer-university.udk-berlin.de</a></p>
-                </div>
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: -1;
+}
 
-                <div class="education-item">
-                    <h3>Enseigner le français langue étrangère aujourd'hui - Parcours avancé</h3>
-                    <p class="institution">CAVILAM - Alliance Française de Vichy</p>
-                    <p class="period">August 9, 2024</p>
-                    <p class="website"><a href="https://mooc.cavilam.com/certificates/36d7bb6236d94d85b9fbeb66dd9e62d6" target="_blank">Certificate Reference</a></p>
-                </div>
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 100% 0%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+    opacity: 0.95;
+    z-index: -1;
+}
 
-                <div class="education-item">
-                    <h3>Diplôme d'Etudes en Langue Française (DELF) B2</h3>
-                    <p class="institution">Ministère de l'éducation nationale</p>
-                    <p class="period">January 2023</p>
-                </div>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-                <div class="education-item">
-                    <h3>La Recherche Documentaire</h3>
-                    <p class="institution">École Polytechnique</p>
-                    <p class="period">September 14, 2022</p>
-                    <p class="website"><a href="https://coursera.org/share/5f8105b70cf3ee237d4deaa0bb026e5b" target="_blank">Certificate Reference</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(var(--bg-color), 0.8);
+    backdrop-filter: var(--nav-blur);
+    -webkit-backdrop-filter: var(--nav-blur);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    z-index: 1000;
+    transition: var(--transition);
+}
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 data-aos="fade-up">Digital Skills</h2>
-            <div class="skills-grid" data-aos="fade-up">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-wordpress"></i>
-                    <h3>Wordpress</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-video"></i>
-                    <h3>Video Editing</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-camera"></i>
-                    <h3>Photography</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 90%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 2rem;
+}
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 data-aos="fade-up">My Projects</h2>
-            <div class="projects-grid" data-aos="fade-up">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project-placeholder.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-content">
-                        <h3>Personal Portfolio Website</h3>
-                        <p>A modern, responsive portfolio website built with HTML5, CSS3, and JavaScript. Features dark mode, smooth scrolling, and AOS animations.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/moarthist/my-profile" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project-placeholder.jpg" alt="Project 2">
-                    </div>
-                    <div class="project-content">
-                        <h3>Full Stack Web Application</h3>
-                        <p>A comprehensive web application built with React.js and Node.js, featuring user authentication, database integration, and RESTful API endpoints.</p>
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Express.js</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/moarthist" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: transparent;
+    text-decoration: none;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 data-aos="fade-up">Get in Touch</h2>
-            <div class="contact-content" data-aos="fade-up">
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Mahmoud MOHAMMADI. All rights reserved.</p>
-        </div>
-    </footer>
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--gradient-1);
+    transition: var(--transition);
+}
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-banner {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 220px;
+    margin: 0 auto 2rem;
+    background: var(--gradient-2);
+    border-radius: 30px;
+    padding: 4px;
+    transform: rotate(-3deg);
+    box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.profile-banner::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-1);
+    border-radius: 32px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.profile-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.2), transparent 50%);
+    border-radius: 30px;
+}
+
+.profile-image {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--card-bg);
+    background: var(--gradient-1);
+    background-clip: padding-box;
+    position: relative;
+    transform: rotate(3deg) translateY(-20px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.typing-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: transparent;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.primary {
+    background: var(--gradient-1);
+    color: white;
+}
+
+.btn.secondary {
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    color: var(--text-color);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+    transform: translateY(-100%);
+    transition: var(--transition);
+}
+
+.btn:hover::before {
+    transform: translateY(0);
+}
+
+/* About Section */
+.about {
+    padding: 6rem 0;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-text {
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Skills Section */
+.skills {
+    padding: 6rem 0;
+    background-color: var(--card-bg);
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-1);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: transparent;
+    margin-bottom: 1rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.skill-card h3 {
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    background-color: var(--card-bg);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+/* Projects Section */
+.projects {
+    padding: 6rem 0;
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(124, 58, 237, 0.2), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-image::after {
+    opacity: 1;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.project-tech span {
+    background: rgba(124, 58, 237, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    color: var(--primary-color);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.project-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 0;
+    background-color: var(--card-bg);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--gradient-1);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-content {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--bg-color);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .typing-text {
+        font-size: 1.8rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    :root {
+        --card-border-radius: 12px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-aos] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.profile-image {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.btn.primary {
+    background-size: 200% 200%;
+    animation: gradient 6s ease infinite;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Notification System */
+.notification {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    background: var(--card-bg);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1000;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.notification.success {
+    border-left: 4px solid var(--accent-color);
+}
+
+.notification.error {
+    border-left: 4px solid #EF4444;
+}
+
+.notification i {
+    font-size: 1.2rem;
+}
+
+.notification.success i {
+    color: var(--accent-color);
+}
+
+.notification.error i {
+    color: #EF4444;
+}
+
+/* Typing Cursor Animation */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    animation: blink 1s infinite;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Active Navigation Link */
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Enhanced Mobile Styles */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-content {
+        position: relative;
+    }
+
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-color);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    /* Adjust spacing for mobile */
+    .section {
+        padding: 4rem 0;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .typing-text {
+        font-size: 1.8rem;
+    }
+
+    .notification {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+/* Loading Spinner */
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Enhanced Hover Effects */
+.skill-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+/* Theme Toggle Animation */
+.theme-toggle i {
+    transition: transform 0.3s ease;
+}
+
+/* Smooth Transition for All Elements */
+* {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Education Section */
+.education {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.education-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background-color: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.education-item p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.education-item .institution {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.education-item .period {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.education-item .website a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.education-item .website a:hover {
+    text-decoration: underline;
+}
+
+.education-item .thesis {
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.education-item .note {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
