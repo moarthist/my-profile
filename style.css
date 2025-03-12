@@ -8,7 +8,7 @@
     --card-bg: #FFFFFF;
     --border-color: #E5E7EB;
     --shadow-color: rgba(124, 58, 237, 0.1);
-    --gradient-1: linear-gradient(135deg, #7C3AED, #F472B6);
+    --gradient-1: linear-gradient(135deg, #2d2c2d, #F472B6);
     --gradient-2: linear-gradient(135deg, #34D399, #7C3AED);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --card-border-radius: 16px;
