@@ -393,104 +393,135 @@ body::after {
     transition: width 1s ease-in-out;
 }
 
-/* Projects Section */
-.projects {
+/* Experience Section */
+.experience {
     padding: 6rem 0;
+    background-color: var(--bg-color);
 }
 
-.projects h2 {
+.experience h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.experience-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.project-card {
+.experience-item {
     background-color: var(--card-bg);
     border-radius: var(--card-border-radius);
-    overflow: hidden;
-    transition: var(--transition);
+    padding: 2rem;
+    margin-bottom: 2rem;
     border: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
-.project-card:hover {
+.experience-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 24px var(--shadow-color);
 }
 
-.project-image {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(124, 58, 237, 0.2), transparent);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.project-card:hover .project-image::after {
-    opacity: 1;
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-content h3 {
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1rem;
 }
 
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-
-.project-tech span {
-    background: rgba(124, 58, 237, 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(124, 58, 237, 0.2);
+.experience-header h3 {
     color: var(--primary-color);
+    font-size: 1.4rem;
+    margin: 0;
 }
 
-.project-links {
-    display: flex;
-    gap: 1rem;
+.experience-header .period {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
 }
 
-.project-links a {
+.experience-body {
     color: var(--text-color);
+}
+
+.experience-body .company {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.experience-body .description {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.website-link {
+    color: var(--primary-color);
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 0.9rem;
     transition: var(--transition);
 }
 
-.project-links a:hover {
+.website-link:hover {
+    opacity: 0.8;
+}
+
+.publications {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.publication {
+    padding: 1rem;
+    background: rgba(124, 58, 237, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.publication .title {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.publication .isbn {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-link {
     color: var(--primary-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.publication-link:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .experience-header .period {
+        font-size: 0.85rem;
+    }
+
+    .publication {
+        padding: 0.8rem;
+    }
 }
 
 /* Contact Section */
@@ -613,7 +644,7 @@ body::after {
     }
 
     .skills-grid,
-    .projects-grid {
+    .experience-content {
         grid-template-columns: 1fr;
     }
 
@@ -829,7 +860,7 @@ body::after {
     box-shadow: 0 8px 24px var(--shadow-color);
 }
 
-.project-card:hover {
+.experience-item:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 24px var(--shadow-color);
 }
