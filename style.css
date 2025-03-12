@@ -167,16 +167,16 @@ body::after {
     height: 220px;
     margin: 0 auto 1.5rem;
     background: linear-gradient(to right, 
-        #444444,    /* Darker grey */
-        #666666,    /* Medium grey */
-        #C71585,    /* Medium violet red */
-        #800080     /* Purple */
+        #1a1a2e,    /* Very dark blue-purple */
+        #2d2d44,    /* Dark purple */
+        #3b3b58,    /* Medium purple */
+        #4a4a6b     /* Light purple */
     );
     border-radius: 30px;
     padding: 4px;
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.2),
-        inset 0 0 30px rgba(199, 21, 133, 0.3);
+        inset 0 0 30px rgba(74, 74, 107, 0.3);
     overflow: hidden;
 }
 
@@ -190,7 +190,7 @@ body::after {
     background: 
         linear-gradient(to right, 
             rgba(255, 255, 255, 0.1),
-            rgba(199, 21, 133, 0.1)
+            rgba(74, 74, 107, 0.1)
         );
 }
 
@@ -202,13 +202,13 @@ body::after {
         linear-gradient(45deg, rgba(255, 255, 255, 0.05), transparent),
         repeating-linear-gradient(
             45deg,
-            rgba(199, 21, 133, 0.1) 0%,
-            rgba(199, 21, 133, 0.1) 1px,
+            rgba(74, 74, 107, 0.1) 0%,
+            rgba(74, 74, 107, 0.1) 1px,
             transparent 1px,
             transparent 10px
         );
     border-radius: 30px;
-    border: 1px solid rgba(199, 21, 133, 0.2);
+    border: 1px solid rgba(74, 74, 107, 0.2);
 }
 
 .profile-image {
@@ -218,14 +218,15 @@ body::after {
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid rgba(255, 255, 255, 0.3);
-    background: linear-gradient(135deg, #444444, #C71585);
+    background: linear-gradient(135deg, #1a1a2e, #4a4a6b);
     background-clip: padding-box;
     position: relative;
     transform: translateY(-20px);
     box-shadow: 
         0 10px 20px rgba(0, 0, 0, 0.25),
-        0 0 0 8px rgba(199, 21, 133, 0.2);
+        0 0 0 8px rgba(74, 74, 107, 0.2);
     z-index: 1;
+    animation: none; /* Remove floating animation */
 }
 
 .profile-image::before {
@@ -236,9 +237,9 @@ body::after {
     padding: 2px;
     background: linear-gradient(
         135deg,
-        #444444,    /* Dark grey */
-        #C71585,    /* Medium violet red */
-        #800080     /* Purple */
+        #1a1a2e,    /* Very dark blue-purple */
+        #3b3b58,    /* Medium purple */
+        #4a4a6b     /* Light purple */
     );
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
@@ -740,7 +741,7 @@ body::after {
 }
 
 .profile-image {
-    animation: float 6s ease-in-out infinite;
+    animation: none; /* Remove floating animation */
 }
 
 @keyframes gradient {
