@@ -1,30 +1,18 @@
 /* Variables */
 :root {
-    --primary-color: #7C3AED;  /* Vibrant purple */
-    --secondary-color: #5b3f4d; /* Pink */
+    --primary-color: #5d3763;  /* Vibrant purple */
+    --secondary-color: #3c2a33; /* Pink */
     --accent-color: #34D399;   /* Mint green */
     --text-color: #1F2937;
     --bg-color: #F9FAFB;
     --card-bg: #FFFFFF;
     --border-color: #E5E7EB;
     --shadow-color: rgba(124, 58, 237, 0.1);
-    --gradient-1: linear-gradient(135deg, #2d2c2d, #5b3f4d);
+    --gradient-1: linear-gradient(135deg, #2d2c2d, #b36e90);
     --gradient-2: linear-gradient(135deg, #34D399, #7C3AED);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --card-border-radius: 16px;
     --nav-blur: blur(10px);
-}
-
-/* Dark Mode Variables */
-[data-theme="dark"] {
-    --primary-color: #A78BFA;
-    --secondary-color: #F472B6;
-    --accent-color: #34D399;
-    --text-color: #F9FAFB;
-    --bg-color: #111827;
-    --card-bg: #1F2937;
-    --border-color: #374151;
-    --shadow-color: rgba(167, 139, 250, 0.2);
 }
 
 /* Global Styles */
@@ -54,10 +42,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://raw.githubusercontent.com/moarthist/profile/e4a416d28c85993c6b11d5207381e5073dfea1e0/background');
+    background-image: url('./images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: var(--bg-color); /* Fallback color */
     opacity: 0.15;
     z-index: -1;
 }
@@ -322,11 +311,6 @@ body::after {
 
 .about-text {
     text-align: justify;
-}
-
-[data-theme="dark"] .about-content {
-    background: rgba(31, 41, 55, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-links {
@@ -821,11 +805,6 @@ body::after {
         position: relative;
     }
 
-    .theme-toggle {
-        margin-left: auto;
-        margin-right: 1rem;
-    }
-
     .nav-links {
         position: absolute;
         top: 100%;
@@ -892,11 +871,6 @@ body::after {
 .experience-item:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 24px var(--shadow-color);
-}
-
-/* Theme Toggle Animation */
-.theme-toggle i {
-    transition: transform 0.3s ease;
 }
 
 /* Smooth Transition for All Elements */
