@@ -166,17 +166,17 @@ body::after {
     max-width: 500px;
     height: 220px;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, 
-        #2F3640 0%,  /* Dark grey */
-        #4A4E56 35%, /* Medium grey */
-        #833471 65%, /* Dark pink */
-        #6F1E51 100% /* Deeper pink */
+    background: linear-gradient(to right, 
+        #444444,    /* Darker grey */
+        #666666,    /* Medium grey */
+        #C71585,    /* Medium violet red */
+        #800080     /* Purple */
     );
     border-radius: 30px;
     padding: 4px;
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.15),
-        inset 0 0 60px rgba(131, 52, 113, 0.2);
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        inset 0 0 30px rgba(199, 21, 133, 0.3);
     overflow: hidden;
 }
 
@@ -188,10 +188,9 @@ body::after {
     width: 100%;
     height: 100%;
     background: 
-        linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.05) 0%,
-            transparent 50%,
-            rgba(131, 52, 113, 0.1) 100%
+        linear-gradient(to right, 
+            rgba(255, 255, 255, 0.1),
+            rgba(199, 21, 133, 0.1)
         );
 }
 
@@ -200,16 +199,16 @@ body::after {
     position: absolute;
     inset: 0;
     background: 
-        linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent),
+        linear-gradient(45deg, rgba(255, 255, 255, 0.05), transparent),
         repeating-linear-gradient(
             45deg,
-            rgba(131, 52, 113, 0.05) 0%,
-            rgba(131, 52, 113, 0.05) 2px,
-            transparent 2px,
-            transparent 8px
+            rgba(199, 21, 133, 0.1) 0%,
+            rgba(199, 21, 133, 0.1) 1px,
+            transparent 1px,
+            transparent 10px
         );
     border-radius: 30px;
-    border: 1px solid rgba(131, 52, 113, 0.2);
+    border: 1px solid rgba(199, 21, 133, 0.2);
 }
 
 .profile-image {
@@ -218,14 +217,14 @@ body::after {
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid rgba(255, 255, 255, 0.2);
-    background: linear-gradient(135deg, #2F3640, #833471);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #444444, #C71585);
     background-clip: padding-box;
     position: relative;
     transform: translateY(-20px);
     box-shadow: 
-        0 10px 20px rgba(0, 0, 0, 0.2),
-        0 0 0 8px rgba(131, 52, 113, 0.1);
+        0 10px 20px rgba(0, 0, 0, 0.25),
+        0 0 0 8px rgba(199, 21, 133, 0.2);
     z-index: 1;
 }
 
@@ -237,9 +236,9 @@ body::after {
     padding: 2px;
     background: linear-gradient(
         135deg,
-        #2F3640,  /* Dark grey */
-        #833471,  /* Dark pink */
-        #6F1E51   /* Deeper pink */
+        #444444,    /* Dark grey */
+        #C71585,    /* Medium violet red */
+        #800080     /* Purple */
     );
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
